@@ -17,9 +17,12 @@ var inputElement = d3.select("#datetime");
 var inputValue = inputElement.property("value");
 console.log(inputValue);
 console.log(ufoData);
-var filteredData = ufoData.filter(dateTime => dateTime.datetime === inputValue);
+//var filteredData = ufoData.filter(dateTime => dateTime.datetime === inputValue);
+var filteredData = ufoData.filter(row => row.datetime === date);
 console.log(filteredData);
 }
+
+
 // Get a reference to the table body
 var tbody = d3.select("tbody");
 // Console.log the UFO data from data.js
