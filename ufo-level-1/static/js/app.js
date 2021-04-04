@@ -1,7 +1,7 @@
 // from data.js assign data to a descriptive variable
 var ufoData = data;
 // select the button
-var button = d3.select ("#button");
+var button = d3.select ("#filter-btn");
 // select the form
 var form = d3.select ("#form");
 // create event handlers
@@ -16,7 +16,7 @@ var inputElement = d3.select("#datetime");
 // Get the value property of the input element
 var inputValue = inputElement.property("value");
 console.log(inputValue);
-console.log(ufoData);
+//console.log(ufoData);
 // create a custom function to return dates that match user input
 var datelist = ufoData;
 function dates(datelist) {
@@ -25,7 +25,7 @@ function dates(datelist) {
   }
   return result
 }
-var filteredData = ufoData.filter(result => ufoData.datetime === "datetime");
+var filteredData = ufoData.filter(ufoData => ufoData.datetime === inputValue);
 console.log(filteredData);
 }
 // Get a reference to the table body
@@ -43,7 +43,7 @@ ufoData.forEach((item) => {
     row.append("td").text(item["shape"]);
     row.append("td").text(item["durationMinutes"]);
     row.append("td").text(item["comments"]);
-   console.log(item);
+    console.log(item);
  });
 
  //  console.log(item);
