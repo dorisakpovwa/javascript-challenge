@@ -7,8 +7,6 @@ var form = d3.select ("#form");
 // create event handlers
 button.on("click", runEnter);
 form.on("submit", runEnter);
-
-var filteredData = null;
 // select table
 var tbody = d3.select("tbody");
 // complete the event handler function for the form
@@ -16,7 +14,7 @@ function Buildtable(data) {
 // remove any data from the table
  tbody.html("")
   // Console.log the UFO data from data.js
-   console.log(data);
+   console.log(ufoData);
    // Step 1: Loop Through `ufoData` and console.log each UFO object
    // Step 2:  Use d3 to append one table row `tr` for each UFO object
   data.forEach((item) => {
@@ -40,14 +38,6 @@ var inputElement = d3.select("#datetime");
 var inputValue = inputElement.property("value");
 console.log(inputValue);
 //console.log(ufoData);
-// create a custom function to return dates that match user input
-var datelist = ufoData;
-function dates(datelist) {
-  for (var i=0; i < datelist.length; i++) {
-    var result = console.log(datelist[i]);
-  }
-  return result
-}
 filteredData = ufoData.filter(ufoDate => ufoDate.datetime === inputValue);
 console.log(filteredData);
 
