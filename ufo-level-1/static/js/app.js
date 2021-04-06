@@ -13,7 +13,7 @@ var filteredData = null;
 var tbody = d3.select("tbody");
 // complete the event handler function for the form
 function Buildtable(data) { 
-
+// remove any data from the table
  tbody.html("")
   // Console.log the UFO data from data.js
    console.log(data);
@@ -48,7 +48,7 @@ function dates(datelist) {
   }
   return result
 }
-filteredData = ufoData.filter(ufoData => ufoData.datetime === inputValue);
+filteredData = ufoData.filter(ufoDate => ufoDate.datetime === inputValue);
 console.log(filteredData);
 
 Buildtable(filteredData);
